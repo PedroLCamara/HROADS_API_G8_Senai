@@ -13,6 +13,7 @@ namespace senai.HROADS.webAPI.Interfaces
         //R
         List<Usuario> ListarTodos();
         Usuario BuscarPorId(int IdUsuario);
+        Usuario Logar(string Email, string Senha);
         //U
         void Atualizar(Usuario UsuarioAtualizado, int IdUsuarioAtualizado);
         //D

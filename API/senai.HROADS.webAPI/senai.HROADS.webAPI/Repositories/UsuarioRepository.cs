@@ -51,5 +51,10 @@ namespace senai.HROADS.webAPI.Repositories
         {
             return Contexto.Usuarios.Include(U => U.Personagems).Include(U => U.IdTipoUsuarioNavigation).ToList();
         }
+
+        public Usuario Logar(string Email, string Senha)
+        {
+            return Contexto.Usuarios.Include(U => U.IdTipoUsuarioNavigation).FirstOrDefault(U => U.Email == Email && U.Senha == Senha);
+        }
     }
 }
