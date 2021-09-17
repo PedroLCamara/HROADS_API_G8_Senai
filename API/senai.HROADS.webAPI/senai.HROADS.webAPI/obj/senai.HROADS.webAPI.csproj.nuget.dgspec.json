@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
-        "projectName": "senai.HROADS.webAPI",
-        "projectPath": "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
-        "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\obj\\",
-=======
     "C:\\Users\\fic\\Desktop\\Pedro L\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj": {}
   },
   "projects": {
@@ -25,7 +12,6 @@
         "projectPath": "C:\\Users\\fic\\Desktop\\Pedro L\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
         "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\fic\\Desktop\\Pedro L\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\obj\\",
->>>>>>> 351df2ff406573c95b71f3a38361253d3609cb34
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7748,19 +7748,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
-      "projectName": "senai.HROADS.webAPI",
-      "projectPath": "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
-      "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fic\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\fic\\Desktop\\Pedro L\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
       "projectName": "senai.HROADS.webAPI",
       "projectPath": "C:\\Users\\fic\\Desktop\\Pedro L\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
       "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\fic\\Desktop\\Pedro L\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\obj\\",
->>>>>>> 351df2ff406573c95b71f3a38361253d3609cb34
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7845,5 +7837,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\fic\\Desktop\\Pedro L\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
