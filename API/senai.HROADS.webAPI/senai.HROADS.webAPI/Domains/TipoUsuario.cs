@@ -14,6 +14,7 @@ namespace senai.HROADS.webAPI.Domains
         }
 
         public byte IdTipoUsuario { get; set; }
+
         [Required(ErrorMessage = "Titulo do tipo de usuário precisa ser informado!!!")]
         public string TituloTipoUsuario { get; set; }
 

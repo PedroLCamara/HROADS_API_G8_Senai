@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.HROADS.webAPI.Domains;
 using senai.HROADS.webAPI.Interfaces;
@@ -35,7 +36,7 @@ namespace senai.HROADS.webAPI.Controllers
                 throw;
             }
         }
-        [HttpGet("IdTpUsuarioBuscado")]
+        [HttpGet("{IdTpUsuarioBuscado}")]
         public IActionResult BuscarPorId(int IdTpUsuarioBuscado)
         {
             try
@@ -53,6 +54,7 @@ namespace senai.HROADS.webAPI.Controllers
             }
         }
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Cadastrar(TipoUsuario NovoTpUsuario)
         {
             try
@@ -66,7 +68,35 @@ namespace senai.HROADS.webAPI.Controllers
                 throw;
             }
         }
-        [HttpPut]
-        public IActionResult 
+        [HttpPut("{IdTpAtualizado}")]
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Atualizar(TipoUsuario TpUsuarioAtualizado, int IdTpAtualizado)
+        {
+            try
+            {
+                TpURepositorio.Atualizar(TpUsuarioAtualizado, IdTpAtualizado);
+                return NoContent();
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+                throw;
+            }
+        }
+        [HttpDelete("{IdTpDeletado}")]
+        [Authorize(Roles = "Administrador")]
+        public IActionResult Deletar(int IdTpDeletado)
+        {
+            try
+            {
+                TpURepositorio.Deletar(IdTpDeletado);
+                return NoContent();
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+                throw;
+            }
+        }
     }
 }
