@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pedro\\Desktop\\Senai\\2oSemestre\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj": {}
+    "C:\\Users\\dev\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pedro\\Desktop\\Senai\\2oSemestre\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj": {
+    "C:\\Users\\dev\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pedro\\Desktop\\Senai\\2oSemestre\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\dev\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
         "projectName": "senai.HROADS.webAPI",
-        "projectPath": "C:\\Users\\Pedro\\Desktop\\Senai\\2oSemestre\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
-        "packagesPath": "C:\\Users\\Pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pedro\\Desktop\\Senai\\2oSemestre\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\obj\\",
+        "projectPath": "C:\\Users\\dev\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\senai.HROADS.webAPI.csproj",
+        "packagesPath": "C:\\Users\\dev\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dev\\Desktop\\HROADS_API_G8_Senai\\API\\senai.HROADS.webAPI\\senai.HROADS.webAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
