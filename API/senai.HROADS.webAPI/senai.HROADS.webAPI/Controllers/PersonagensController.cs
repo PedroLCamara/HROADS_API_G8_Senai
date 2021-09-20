@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace senai.HROADS.webAPI.Controllers
@@ -24,7 +25,7 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Jogador")]
+        [Authorize(Roles = "Jogador, Administrador")]
         public IActionResult ListarTodos()
         {
             try
@@ -56,13 +57,30 @@ namespace senai.HROADS.webAPI.Controllers
                 throw;
             }
         }
+
+        [HttpGet("ListarComJogadores")]
+        [Authorize(Roles = "Administrador")]
+        public IActionResult ListarComJogadores()
+        {
+            try
+            {
+                return Ok(PRepositorio.LerComJogador());
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+                throw;
+            }
+        }
+
         [HttpPost]
         [Authorize(Roles = "Jogador")]
         public IActionResult Cadastrar(Personagem NovoPersonagem)
         {
             try
             {
-                NovoPersonagem.IdUsuario = Convert.ToInt32(User.Claims.Where(C => C.Type == JwtRegisteredClaimNames.NameId));
+                List<Claim> ListaClaims = User.Claims.ToList();
+                NovoPersonagem.IdUsuario = Convert.ToInt32(ListaClaims.Find(C => C.Type == ClaimTypes.NameIdentifier).Value);
                 PRepositorio.Cadastrar(NovoPersonagem);
                 return StatusCode(201);
             }
@@ -79,7 +97,8 @@ namespace senai.HROADS.webAPI.Controllers
         {
             try
             {
-                if (Convert.ToInt32(User.Claims.Where(C => C.Type == JwtRegisteredClaimNames.NameId)) != IdPersonagemAtualizado)
+                List<Claim> ListaClaims = User.Claims.ToList();
+                if (Convert.ToInt32(ListaClaims.Find(C => C.Type == ClaimTypes.NameIdentifier).Value) != PRepositorio.BuscarPorId(IdPersonagemAtualizado).IdUsuario)
                 {
                     return Unauthorized("Apenas o jogador que criou o personagem pode atualiza-lo!");
                 }
@@ -97,14 +116,23 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpDelete("{IdPersonagemDeletado}")]
-        [Authorize(Roles = "Jogador")]
+        [Authorize(Roles = "Jogador, Administrador")]
         public IActionResult Deletar(int IdPersonagemDeletado)
         {
             try
             {
-                if (Convert.ToInt32(User.Claims.Where(C => C.Type == JwtRegisteredClaimNames.NameId)) != IdPersonagemDeletado)
+                List<Claim> ListaClaims = User.Claims.ToList();
+                if (ListaClaims.Find(C => C.Type == ClaimTypes.Role).Value.ToString() == "Jogador")
                 {
-                    return Unauthorized("Apenas o jogador que criou o personagem pode deleta-lo!");
+                    if (Convert.ToInt32(ListaClaims.Find(C => C.Type == ClaimTypes.NameIdentifier)) != PRepositorio.BuscarPorId(IdPersonagemDeletado).IdUsuario)
+                    {
+                        return Unauthorized("Apenas o jogador que criou o personagem pode deleta-lo!");
+                    }
+                    else
+                    {
+                        PRepositorio.Deletar(IdPersonagemDeletado);
+                        return NoContent();
+                    }
                 }
                 else
                 {

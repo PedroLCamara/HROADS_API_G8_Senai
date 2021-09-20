@@ -21,7 +21,7 @@ namespace senai.HROADS.webAPI.Repositories
             {
                 UsuarioBuscado.Email = UsuarioAtualizado.Email;
                 UsuarioBuscado.Senha = UsuarioAtualizado.Senha;
-                if (UsuarioBuscado.Personagems == null)
+                if (UsuarioBuscado.Personagems.Count() <= 0)
                 {
                     UsuarioBuscado.IdTipoUsuario = UsuarioAtualizado.IdTipoUsuario;
                 }

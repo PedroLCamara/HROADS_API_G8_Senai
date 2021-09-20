@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using senai.HROADS.webAPI.Domains;
 using senai.HROADS.webAPI.Interfaces;
 using senai.HROADS.webAPI.Repositories;
@@ -37,6 +38,7 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Cadastrar(ConClasseHab novaConClasseHab)
         {
             _conClasseHabepository.Cadastrar(novaConClasseHab);
@@ -45,6 +47,7 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpPut("{idClasseHabA}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Atualizar(int idClasseHabA, ConClasseHab novaConClasseHabA)
         {
             _conClasseHabepository.Atualizar(idClasseHabA, novaConClasseHabA);
@@ -53,6 +56,7 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpDelete("{idClasseHabD}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Deletar(int idClasseHabD)
         {
             _conClasseHabepository.Deletar(idClasseHabD);

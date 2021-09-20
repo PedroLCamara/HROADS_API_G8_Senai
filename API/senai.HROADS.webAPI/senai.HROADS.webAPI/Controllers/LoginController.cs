@@ -27,9 +27,9 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Logar(string Email, string Senha)
+        public IActionResult Logar(Usuario Login)
         {
-            Usuario UsuarioBuscado = URepositorio.Logar(Email, Senha);
+            Usuario UsuarioBuscado = URepositorio.Logar(Login.Email, Login.Senha);
 
             try
             {

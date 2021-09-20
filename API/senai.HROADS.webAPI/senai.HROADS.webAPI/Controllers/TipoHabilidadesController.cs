@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using senai.HROADS.webAPI.Domains;
 using senai.HROADS.webAPI.Interfaces;
 using senai.HROADS.webAPI.Repositories;
@@ -37,6 +38,7 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Cadastrar(TipoHabilidade tipoHabilidadeC)
         {
             _tipoHabilidadeRepository.Cadastrar(tipoHabilidadeC);
@@ -45,6 +47,7 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpPut("{idTipoHabilidadeA}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Atualizar(int idTipoHabilidadeA, TipoHabilidade tipoHabilidadeA)
         {
             _tipoHabilidadeRepository.Atualizar(idTipoHabilidadeA, tipoHabilidadeA);
@@ -53,6 +56,7 @@ namespace senai.HROADS.webAPI.Controllers
         }
 
         [HttpDelete("{idTipoHabilidadeD}")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Deletar(int idTipoHabilidadeD)
         {
             _tipoHabilidadeRepository.Deletar(idTipoHabilidadeD);

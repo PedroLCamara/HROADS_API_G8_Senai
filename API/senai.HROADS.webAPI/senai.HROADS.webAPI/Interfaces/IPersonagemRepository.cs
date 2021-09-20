@@ -13,6 +13,7 @@ namespace senai.HROADS.webAPI.Interfaces
         //R
         List<Personagem> LerTodos();
         Personagem BuscarPorId(int IdPersonagem);
+        List<Personagem> LerComJogador();
         //U
         void Atualizar(Personagem PersonagemAtualizado, int IdPersonagemAtualizado);
         //D

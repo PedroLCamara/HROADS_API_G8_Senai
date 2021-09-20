@@ -1,4 +1,5 @@
-﻿using senai.HROADS.webAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.HROADS.webAPI.Contexts;
 using senai.HROADS.webAPI.Domains;
 using senai.HROADS.webAPI.Interfaces;
 using System;
@@ -26,7 +27,7 @@ namespace senai.HROADS.webAPI.Repositories
 
         public Habilidade BuscarPorId(int idHabilidadeB)
         {
-            return ctx.Habilidades.FirstOrDefault(h => h.IdHabilidade == idHabilidadeB);
+            return ctx.Habilidades.Include(H => H.IdTipoHabilidadeNavigation).Include(H => H.ConClasseHabs).ThenInclude(CCH => CCH.IdClasseNavigation).FirstOrDefault(h => h.IdHabilidade == idHabilidadeB);
         }
 
         public void Cadastrar(Habilidade novaHabilidadeC)
@@ -45,7 +46,7 @@ namespace senai.HROADS.webAPI.Repositories
 
         public List<Habilidade> ListarTodos()
         {
-            return ctx.Habilidades.ToList();
+            return ctx.Habilidades.Include(H => H.IdTipoHabilidadeNavigation).Include(H => H.ConClasseHabs).ThenInclude(CCH => CCH.IdClasseNavigation).ToList();
         }
     }
 }

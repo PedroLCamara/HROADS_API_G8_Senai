@@ -32,7 +32,7 @@ namespace senai.HROADS.webAPI.Repositories
 
         public Personagem BuscarPorId(int IdPersonagem)
         {
-            return Contexto.Personagems.Include(P => P.IdClasseNavigation).Include(P => P.IdUsuarioNavigation).FirstOrDefault(P => P.IdPersonagem == IdPersonagem);
+            return Contexto.Personagems.Include(P => P.IdClasseNavigation).FirstOrDefault(P => P.IdPersonagem == IdPersonagem);
         }
 
         public void Cadastrar(Personagem NovoPersonagem)
@@ -50,6 +50,11 @@ namespace senai.HROADS.webAPI.Repositories
         }
 
         public List<Personagem> LerTodos()
+        {
+            return Contexto.Personagems.Include(P => P.IdClasseNavigation).ToList();
+        }
+
+        public List<Personagem> LerComJogador()
         {
             return Contexto.Personagems.Include(P => P.IdClasseNavigation).Include(P => P.IdUsuarioNavigation).ToList();
         }

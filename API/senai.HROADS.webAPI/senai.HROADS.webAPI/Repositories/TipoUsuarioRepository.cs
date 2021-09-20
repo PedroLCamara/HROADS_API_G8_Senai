@@ -38,6 +38,7 @@ namespace senai.HROADS.webAPI.Repositories
         public void Deletar(int IdTipoDeletado)
         {
             Contexto.TipoUsuarios.Remove(BuscarPorId(IdTipoDeletado));
+            Contexto.SaveChanges();
         }
 
         public List<TipoUsuario> ListarTodos()
